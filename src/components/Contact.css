@@ -1,0 +1,48 @@
+.final {
+  margin-block: 56px 40px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.final h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+}
+
+.final p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.num {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.num output {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 26px;
+  user-select: all;
+}
+
+.copied {
+  font-size: 13px;
+  color: var(--accent);
+  min-height: 1.2em;
+}
+
+@media (max-width: 560px) {
+  .final {
+    padding: 24px 20px;
+  }
+}
