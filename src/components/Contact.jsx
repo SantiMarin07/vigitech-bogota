@@ -1,19 +1,20 @@
 import { useRef, useState } from 'react'
-import { enlaceWhatsApp, MENSAJE_VISITA, TELEFONO_VISIBLE } from '../config/negocio.js'
+import { CONTACTOS, enlaceWhatsApp, MENSAJE_VISITA } from '../config/negocio.js'
 import './Contact.css'
 
 export default function Contact() {
-  const numeroRef = useRef(null)
+  const numerosRef = useRef([])
   const [aviso, setAviso] = useState('')
 
-  async function copiar() {
+  async function copiar(i) {
+    const { visible } = CONTACTOS[i]
     try {
-      await navigator.clipboard.writeText(TELEFONO_VISIBLE)
-      setAviso('Número copiado.')
+      await navigator.clipboard.writeText(visible)
+      setAviso(`Número ${visible} copiado.`)
     } catch {
       // Sin acceso al portapapeles: se selecciona el número para copiarlo a mano.
       const rango = document.createRange()
-      rango.selectNodeContents(numeroRef.current)
+      rango.selectNodeContents(numerosRef.current[i])
       const sel = window.getSelection()
       sel.removeAllRanges()
       sel.addRange(rango)
@@ -29,14 +30,35 @@ export default function Contact() {
           <p>Escríbenos por WhatsApp y cuadramos el día.</p>
         </div>
         <div>
-          <div className="num">
-            <output ref={numeroRef}>{TELEFONO_VISIBLE}</output>
-            <a className="btn" href={enlaceWhatsApp(MENSAJE_VISITA)} target="_blank" rel="noopener">
-              Abrir WhatsApp
-            </a>
-            <button type="button" className="btn ghost" onClick={copiar}>
-              Copiar número
-            </button>
+          <div className="numeros">
+            {CONTACTOS.map((c, i) => (
+              <div className="num" key={c.whatsapp}>
+                <output
+                  ref={(el) => {
+                    numerosRef.current[i] = el
+                  }}
+                >
+                  {c.visible}
+                </output>
+                <a
+                  className="btn"
+                  href={enlaceWhatsApp(MENSAJE_VISITA, c.whatsapp)}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={`Abrir WhatsApp al ${c.visible}`}
+                >
+                  Abrir WhatsApp
+                </a>
+                <button
+                  type="button"
+                  className="btn ghost"
+                  aria-label={`Copiar número ${c.visible}`}
+                  onClick={() => copiar(i)}
+                >
+                  Copiar número
+                </button>
+              </div>
+            ))}
           </div>
           <div className="copied" aria-live="polite">
             {aviso}

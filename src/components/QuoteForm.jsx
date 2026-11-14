@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ANTICIPO, PRECIOS, calcularTotal, formatoPesos } from '../config/precios.js'
-import { enlaceWhatsApp, TELEFONO_VISIBLE } from '../config/negocio.js'
+import { CONTACTOS, enlaceWhatsApp } from '../config/negocio.js'
 import { LUGARES, ORDEN_LUGARES } from '../config/lugares.js'
 import './QuoteForm.css'
 
@@ -136,7 +136,9 @@ export default function QuoteForm({ lugar, onChangeLugar }) {
               <a className="btn" href={enlaceWhatsApp(mensajeAsesor)} target="_blank" rel="noopener">
                 Hablar con un asesor por WhatsApp
               </a>
-              <p className="small">También puedes llamar o escribir al {TELEFONO_VISIBLE}.</p>
+              <p className="small">
+                También puedes llamar o escribir al {CONTACTOS.map((c) => c.visible).join(' o al ')}.
+              </p>
             </div>
           ) : (
             <div className="price">

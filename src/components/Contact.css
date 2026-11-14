@@ -21,6 +21,12 @@
   color: var(--muted);
 }
 
+.numeros {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .num {
   display: flex;
   align-items: center;
@@ -32,7 +38,23 @@
   font-family: var(--display);
   font-weight: 900;
   font-size: 26px;
+  font-variant-numeric: tabular-nums;
   user-select: all;
+}
+
+@media (max-width: 560px) {
+  /* En celular: número arriba y los dos botones debajo, lado a lado */
+  .num {
+    gap: 8px;
+  }
+  .num output {
+    flex-basis: 100%;
+  }
+  .num .btn {
+    flex: 1 1 auto;
+    padding-inline: 12px;
+    font-size: 15px;
+  }
 }
 
 .copied {

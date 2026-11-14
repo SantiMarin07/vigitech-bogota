@@ -88,7 +88,7 @@ SITE_URL=https://TU-USUARIO.github.io/vigitech-bogota npm run build
 | Qué | Archivo |
 | --- | --- |
 | **Precios** del cotizador (`base` y `porCámara`), anticipo y lo que incluye cada tipo | `src/config/precios.js` |
-| **Número de WhatsApp**, número visible, Instagram y mensaje de "Pedir visita" | `src/config/negocio.js` |
+| **Números de WhatsApp** (el primero es el principal), Instagram y mensaje de "Pedir visita" | `src/config/negocio.js` |
 | Títulos por lugar ("Así quedaría protegida tu casa"…), nota bajo el simulador | `src/config/lugares.js` |
 | Cámaras de cada escena: nombre, descripción, "por qué", posición, ángulo | `src/scenes/local.js`, `oficina.js`, `casa.js`, `finca.js` |
 | Catálogo (modelos, ventajas, desventajas, "Ideal para") | `src/components/Catalog.jsx` |
@@ -116,5 +116,5 @@ src/
 ## Contacto
 
 **VigiTech Bogotá**
-- WhatsApp: [320 985 4151](https://wa.me/573209854151)
+- WhatsApp: [320 985 4151](https://wa.me/573209854151) · [315 714 0768](https://wa.me/573157140768)
 - Instagram: [@vigitechbogota](https://www.instagram.com/vigitechbogota/)
