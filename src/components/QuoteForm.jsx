@@ -142,7 +142,7 @@ export default function QuoteForm({ lugar, onChangeLugar }) {
             </div>
           ) : (
             <div className="price">
-              <div className="lbl">Precio estimado instalado</div>
+              <div className="lbl">Precio de lanzamiento · instalado</div>
               <div className="total">{formatoPesos(total)}</div>
               <div className="split">
                 <span>Para empezar pagas el {Math.round(ANTICIPO * 100)}%</span>

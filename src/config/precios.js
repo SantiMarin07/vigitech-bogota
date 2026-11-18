@@ -9,8 +9,8 @@ export const PRECIOS = {
     detalle: 'La más económica',
     nombre: 'Análogas (Turbo HD)', // va en el mensaje de WhatsApp
     corto: 'análogas Turbo HD', // va en la lista "incluye"
-    base: 520000,
-    porCámara: 160000,
+    base: 560000,
+    porCámara: 100000,
     incluye: [
       'Grabador DVR con detección de movimiento',
       'Disco duro de 1 TB para videovigilancia',
@@ -25,8 +25,8 @@ export const PRECIOS = {
     detalle: 'La mejor imagen',
     nombre: 'IP de cable (PoE)',
     corto: 'IP de cable',
-    base: 960000,
-    porCámara: 410000,
+    base: 900000,
+    porCámara: 330000,
     incluye: [
       'Grabador NVR con puertos PoE',
       'Disco duro de 1 TB para videovigilancia',
@@ -40,8 +40,8 @@ export const PRECIOS = {
     detalle: 'Sin cable de video',
     nombre: 'WiFi',
     corto: 'WiFi',
-    base: 60000,
-    porCámara: 350000,
+    base: 50000,
+    porCámara: 310000,
     incluye: [
       'Memoria microSD de 64 GB en cada cámara',
       'Soporte e instalación en pared o techo',
